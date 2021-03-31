@@ -1,0 +1,44 @@
+/* Brand - orange */
+$primary-light: #fff8ea;
+$primary-main: #ffd2aa;
+$primary-dark: #fff5da;
+
+/* Brand - purple */
+$secondary-light: #e7efff;
+$secondary-main: #b0cbff;
+$walgreens-light: #f3f7ff;
+
+/* Elements */
+$dark-blue: #0740ae;
+$dark-orange: #ffa470;
+$deep-orange: #ff8946;
+$link: #0740ae;
+$link-disabled: #809dd6;
+$white: #fff;
+$text-gray: #939393;
+$text-danger: #f44;
+$gray-disabled: #d8d8d8;
+$text-primary: #212121;
+$text-secondary: #757575;
+
+/* Breakpoints */
+// TODO: create reusable media queries using some of those below
+// Don't need to use all those just to have them as reference in case we need them
+$res-xl: 1920px;  // Large monitors
+$res-lg: 1600px;
+$res-md: 1280px;  // Macbook pro/air 13
+// 1024px;   <- landscape for most tablets
+$res-sm: 992px;
+//  834px;   <- portrait large tablets
+$res-xs: 768px;    // portrait normal tablets
+$res-xxs: 600px;   // portrait small tablets, rarely needed
+
+// If particular phones need to be targeted.
+// For example some old people might have older phones (iPhone 5, 5s, 6)
+$mobile-xl: 414px;  // iPhone: XR, XS Max, 11, 11 Pro Max -- 	Google Pixel XL, 2 XL, 3 Xl, 4 Xl
+$mobile-lg: 393px;  // Google Pixel 3, 4, 4a, 5 -- Redmi Note 7, 8, 8 Pro, 9, 9 Pro
+$mobile-md: 375px;  // iPhone 6, 6S, 7, 8, X, XS, 11 Pro <- Most popular IPhones
+$mobile-sm: 360px;  // All Huawei -- Galaxy S4, S5, S6, S7, S7 Edge, S8, S8+, S9, S9+, S10, S10+ Note 3, Note 8, 9, Note 10, 10+
+$mobile-xs: 320px;  // iPhone 4, 5, 5C, 5S, SE
+
+$mobile-side-padding: 5.33%;

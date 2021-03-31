@@ -1,0 +1,171 @@
+@mixin font($size: 14px, $weight: 500, $color: null, $lineHeight: null, $letterSpacing: null) {
+  color: $color;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+}
+
+.form-input-container {
+  display: flex;
+  justify-content: space-between;
+
+  &:focus {
+    outline: none;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .last-name-input {
+    margin-left: 40px;
+  }
+
+  .large-input {
+    max-width: 510px;
+  }
+
+  .terms-and-conditions-text {
+    @include font(18px, 800, #000, 23px);
+  }
+
+  .address-form-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .autocomplete-input {
+    flex: 5;
+  }
+
+  .apartment-input {
+    flex: 2;
+    margin-left: 20px;
+  }
+
+  .error-container {
+    padding-bottom: 25px;
+  }
+
+  :global(#not-available-title) {
+    @include font(22px, 500, #000, 38px);
+  }
+
+  #map {
+    height: 0;
+    margin-bottom: 20px;
+    transition: height 0.5s ease-in-out;
+    width: 90%;
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 85%;
+
+  .text-title {
+    @include font(48px, 800, #000, 48px);
+    margin: 0;
+  }
+
+  .text {
+    @include font(18px, 400, #000, 23px);
+    margin: 36px 0;
+  }
+}
+
+.slider-buttons-section {
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+
+  .slider-button-container {
+    margin-left: 120px;
+    width: 195px;
+  }
+}
+
+:global(.grecaptcha-badge) {
+  z-index: 200;
+}
+
+.terms-container {
+  margin-top: 40px;
+
+  .terms-text {
+    @include font(12px, 400, #000, 15px);
+
+    &.bold {
+      @include font(12px, 800, #000, 15px);
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .form-input-container {
+    width: 100%;
+
+    .address-form-inputs {
+      width: 100%;
+    }
+
+    #map {
+      width: 100%;
+    }
+
+    .text-container {
+      max-width: 100%;
+    }
+
+    .terms-container {
+      width: 100%;
+    }
+
+    .text-title {
+      @include font(36px, 800, #000, 42px);
+      margin-bottom: 40px;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-input-container {
+    flex-direction: column;
+    margin-bottom: 0;
+
+    .address-form-inputs {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .form-inputs {
+      flex-direction: column;
+      margin-bottom: 24px;
+      width: 100%;
+
+      .last-name-input {
+        margin-left: 0;
+      }
+    }
+
+    .apartment-input {
+      margin: 10px 0 15px;
+    }
+
+    .slider-buttons-section {
+      width: 100%;
+    }
+
+    .text {
+      display: none;
+    }
+  }
+}

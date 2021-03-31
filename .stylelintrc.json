@@ -1,0 +1,39 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested", "after-same-name"],
+        "ignore": ["after-comment"],
+        "ignoreAtRules": ["if", "else", "mixin"]
+      }
+    ],
+    "indentation": 2,
+    "max-empty-lines": 1,
+    "max-nesting-depth": 5,
+    "number-leading-zero": null,
+    "order/order": [
+      [
+        "dollar-variables",
+        {
+          "type": "at-rule",
+          "selector": "/^font$/",
+          "hasBlock": false
+        },
+        "custom-properties",
+        "at-variables",
+        "declarations",
+        {
+          "type": "at-rule",
+          "name": "include",
+          "hasBlock": true
+        },
+        "rules"
+      ]
+    ],
+    "selector-class-pattern": ".*",
+    "selector-max-id": 3,
+    "string-quotes": "single"
+  }
+}

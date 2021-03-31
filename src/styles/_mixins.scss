@@ -1,0 +1,86 @@
+@mixin font($size: 14px, $weight: 500, $color: null, $lineHeight: null, $letterSpacing: null) {
+  color: $color;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+}
+  
+@mixin respond-above($breakpoint) {
+  @if $breakpoint {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+  
+@mixin respond-below($breakpoint) {
+  @if $breakpoint {
+    @media (max-width: ($breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+  
+@mixin respond-between($lower, $upper) {
+  @if $lower and $upper {
+    @media (min-width: $lower) and (max-width: ($upper - 1)) {
+      @content;
+    }
+  } @else {
+    @if ($lower == null) {
+      @warn 'Lower breakpoint is invalid: #{$lower}.';
+    }  @else {
+      @warn 'Upper breakpoint is invalid: #{$upper}.';
+    }
+  }
+}
+  
+@mixin respond-height-below($breakpoint) {
+  @if $breakpoint {
+    @media (max-height: ($breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+  
+@mixin mobile-landscape() {
+  @media (min-width: 560px) and (max-width: 825px) and (max-height: 450px) {
+    @content;
+  }
+}
+  
+@mixin set-mobile-legal-table-width($width) {
+  :global(#main-table) {  
+    @include respond-below($res-xxs) {
+      width: $width;
+    }
+  }
+}
+  
+@mixin set-mobile-legal-table-column-width($column-widths...) {
+  :global(#main-table .table-head-cell) {
+    @include respond-between($mobile-xs, $res-xxs) { 
+      @for $i from 1 through length($column-widths) {
+        &:nth-child(#{$i}) { 
+          width: nth($column-widths, $i); 
+        }
+      }
+    }
+  }
+}
+  
+@mixin page-side-gutter {
+  @include respond-below($res-xxs) {
+    padding-left: $mobile-side-padding;
+    padding-right: $mobile-side-padding;
+    width: 100vw;
+  }
+}

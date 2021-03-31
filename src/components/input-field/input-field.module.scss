@@ -1,0 +1,40 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+:global(
+.custom-text-field .MuiInput-underline::after,
+.custom-text-field .MuiInput-underline::before,
+.custom-text-field .MuiInput-underline.Mui-error::after,
+.custom-text-field .MuiInput-underline:hover:not(.Mui-disabled)::before) {
+  border-bottom: 0;
+}
+
+:global(.custom-text-field .MuiTextField-root) {
+  width: 100%;
+}
+
+:global(.custom-text-field .MuiTextField-root input) {
+  @include font(18px, 400, $text-gray, 23px);
+  background-color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 14px 0 14px 16px;
+  width: 100%;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    box-shadow: 0 0 0 100px #fff inset;
+  }
+}
+
+:global(.error-container) {
+  height: 14px;
+  position: relative;
+}
+
+:global(.error-text) {
+  @include font(14px, 400, $text-danger, 14px);
+  position: absolute;
+  top: 5px;
+}

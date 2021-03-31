@@ -1,0 +1,48 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+:global(.custom-button .MuiButton-label) {
+  @include font(16px, 600, #fff, 23px);
+  text-transform: none;
+}
+
+:global(.custom-button .MuiButton-root) {
+  border-radius: 32px;
+  height: 52px;
+  padding: 16px 0;
+}
+
+:global(.custom-button .dark-blue) {
+  background-color: $dark-blue;
+
+  &:hover {
+    background-color: $dark-blue;
+    opacity: 85%;
+  }
+}
+
+:global(.custom-button .secondary-light) {
+  background-color: $secondary-light;
+
+  &:hover {
+    background-color: $secondary-light;
+    opacity: 85%;
+  }
+}
+
+:global(.custom-button .dark-orange) {
+  background-color: $dark-orange;
+
+  &:hover {
+    background-color: $dark-orange;
+    opacity: 85%;
+  }
+}
+
+:global(.custom-button .secondary-light .MuiButton-label) {
+  color: #000;
+}
+
+:global(.custom-button .Mui-disabled) {
+  background: $gray-disabled;
+}
