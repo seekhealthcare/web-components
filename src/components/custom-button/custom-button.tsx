@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button, CircularProgress } from '@material-ui/core';
 
-import scssStyles from './custom-button.module.scss';
+import './custom-button.scss';
 
 export interface ICustomButtonProps {
   id: string;
@@ -10,7 +10,7 @@ export interface ICustomButtonProps {
   isSubmitting?: boolean;
   text: string;
   type?: 'button' | 'submit' | 'reset';
-  backgroundColor: string;
+  className: string;
   onClick?: () => void;
 }
 
@@ -19,7 +19,7 @@ export const CustomButton: React.FC<ICustomButtonProps> = ({
   disabled = false,
   isSubmitting = false,
   text,
-  backgroundColor,
+  className,
   type = 'button',
   onClick
 }) => {
@@ -30,7 +30,7 @@ export const CustomButton: React.FC<ICustomButtonProps> = ({
           <Button
             id={id}
             type={type}
-            className={backgroundColor}
+            className={className}
             disabled={disabled}
             onClick={onClick}
             fullWidth
@@ -39,7 +39,6 @@ export const CustomButton: React.FC<ICustomButtonProps> = ({
             {text}
           </Button>
         </div>
-        <style jsx>{scssStyles}</style>
       </div>
     </>
   );
