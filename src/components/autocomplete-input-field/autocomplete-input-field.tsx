@@ -6,7 +6,7 @@ import { Grid, TextField } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { AutocompleteRenderInputParams } from '@material-ui/lab/Autocomplete/Autocomplete';
 
-import scssStyles from './autocomplete-input-field.module.scss';
+import './autocomplete-input-field.scss';
 
 export interface IAddressInfo {
   zip: string;
@@ -208,7 +208,6 @@ export const AutocompleteInputField: React.FC<IGoogleInputField> = ({ id, name, 
         renderInput={renderInput}
         renderOption={renderOption}
       />
-      <style jsx>{scssStyles}</style>
     </>
   );
 };

@@ -11,12 +11,9 @@ storiesOf('Input field', module)
     'text',
     () => (
       <>
-        <h3>Text input</h3>
-        <InputField name="firstName" placeholder="First Name" />
-        <h3>Number input</h3>
-        <InputField name="number" type="number" placeholder="Enter your age" />
-        <h3>Phone number input</h3>
-        <InputField name="tel" type="tel" placeholder="phone number" />
+        <InputField name="firstName" placeholder="Text input" />
+        <InputField name="number" type="number" placeholder="Number input" />
+        <InputField name="tel" type="tel" placeholder="phone number input" />
       </>
     ),
     {

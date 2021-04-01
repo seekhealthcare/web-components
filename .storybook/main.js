@@ -1,16 +1,27 @@
-const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-  webpackFinal: async (config) => {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials"
+  ],
+  webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../')
+      test: /.*\.(?:le|c|sc)ss$/,
+      loaders: [
+        'style-loader',
+        'css-loader',
+        'sass-loader', 
+      ]
     });
-
-    // Return the altered config
+    config.plugins.push(new MiniCssExtractPlugin({
+      filename: '[name]-[contenthash].css',
+      chunkFilename: '[id]-[contenthash].css',
+    }));
     return config;
-  }
-};
+  },
+}

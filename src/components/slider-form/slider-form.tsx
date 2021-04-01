@@ -14,7 +14,6 @@ import {
   IAddressInfo,
   InputField
 } from '../index';
-import scssStyles from './slider-form.module.scss';
 import generateRequestCallSchema, {
   IRequestCallSchema,
   validateAddress,
@@ -22,6 +21,8 @@ import generateRequestCallSchema, {
   validateNames,
   validatPhoneNumber
 } from './slider-form.validation';
+
+import './slider-form.scss';
 
 const AVAILABLE_TEXT =
   'Looks like we have many available plans in that area!  Go ahead and submit and we’ll be in touch soon!';
@@ -241,7 +242,7 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                           text="Next"
                           disabled={!isFirstSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
+                          className={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -277,7 +278,7 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                           text="Next"
                           disabled={!isSecondSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
+                          className={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -310,7 +311,7 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                           text="Next"
                           disabled={!isThirdSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
+                          className={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -354,7 +355,7 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                           type="button"
                           text={strings.submitBtnText}
                           onClick={() => props.handleSubmit()}
-                          backgroundColor={colors.blueButton}
+                          className={colors.blueButton}
                           disabled={!dirty || !isValid || isSubmitting || !isFourthSlideValid}
                           isSubmitting={isSubmitting}
                         />
@@ -372,7 +373,6 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
         }}
       </Formik>
       <ConfirmDialog open={openModal} messageSent={messageSent} onClose={handleClose} />
-      <style jsx>{scssStyles}</style>
     </>
   );
 };

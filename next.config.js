@@ -18,14 +18,10 @@ const nextConfig = {
       use: [
         options.defaultLoaders.babel,
         {
-          loader: require('styled-jsx/webpack').loader,
           options: {
             type: 'scoped'
           }
-        },
-        'style-loader',
-        'css-loader',
-        'sass-loader'
+        }
       ]
     });
 

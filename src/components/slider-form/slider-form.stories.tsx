@@ -33,7 +33,7 @@ const sliderConfig = {
       submitBtnText: 'Agree and submit'
     },
     colors: {
-      blueButton: 'red'
+      blueButton: 'dark-orange'
     },
     helperFuncs: {
       getCampaignInfo: () => {

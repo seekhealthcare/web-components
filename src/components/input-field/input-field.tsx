@@ -4,7 +4,7 @@ import InputMask, { Props } from 'react-input-mask';
 
 import { TextField, TextFieldProps } from '@material-ui/core';
 
-import scssStyles from './input-field.module.scss';
+import './input-field.scss';
 
 export interface IInputFieldProps {
   name: string;
@@ -41,7 +41,6 @@ export const InputField: React.FC<IInputFieldProps> = ({ name, placeholder, type
           )}
         </InputMask>
         {errorBlock()}
-        <style jsx>{scssStyles}</style>
       </>
     );
   }
@@ -59,7 +58,6 @@ export const InputField: React.FC<IInputFieldProps> = ({ name, placeholder, type
         />
       </div>
       {errorBlock()}
-      <style jsx>{scssStyles}</style>
     </>
   );
 };

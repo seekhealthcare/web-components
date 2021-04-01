@@ -13,7 +13,8 @@ export default {
   argTypes: {
     className: { control: 'text' },
     text: { control: 'text' },
-    disabled: { control: 'boolean' }
+    disabled: { control: 'boolean' },
+    id: { control: 'text' }
   }
 } as Meta;
 
@@ -29,15 +30,10 @@ Disabled.args = {
 
 export const CustomBackground = Template.bind({});
 CustomBackground.args = {
-  className: '.red'
+  className: 'secondary-light'
 };
 
 export const CustomText = Template.bind({});
 CustomText.args = {
   text: 'Custom Text'
-};
-
-export const OnClick = Template.bind({});
-OnClick.args = {
-  onClick: () => console.log('Clicked the button!')
 };
