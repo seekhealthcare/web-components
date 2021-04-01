@@ -237,11 +237,11 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                       <div className="slider-button-container">
                         <CustomButton
                           id="next-1st-slide"
+                          className="next-1st-slide"
                           type="button"
                           text="Next"
                           disabled={!isFirstSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -273,11 +273,11 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                       <div className="slider-button-container">
                         <CustomButton
                           id="next-2nd-slide"
+                          className="next-2nd-slide"
                           type="button"
                           text="Next"
                           disabled={!isSecondSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -306,11 +306,11 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                       <div className="slider-button-container">
                         <CustomButton
                           id="next-3rd-slide"
+                          className="next-3rd-slide"
                           type="button"
                           text="Next"
                           disabled={!isThirdSlideValid}
                           onClick={() => slider.slickNext()}
-                          backgroundColor={colors.blueButton}
                         />
                       </div>
                     </div>
@@ -351,10 +351,10 @@ export const SlidingRequestCallForm: React.FC<ISlidingRequestCallForm> = ({ conf
                       <div className="slider-button-container">
                         <CustomButton
                           id="submit-btn"
+                          className="submit-btn"
                           type="button"
                           text={strings.submitBtnText}
                           onClick={() => props.handleSubmit()}
-                          backgroundColor={colors.blueButton}
                           disabled={!dirty || !isValid || isSubmitting || !isFourthSlideValid}
                           isSubmitting={isSubmitting}
                         />

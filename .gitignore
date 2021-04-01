@@ -2,3 +2,7 @@
 lib
 .eslintcache
 storybook-static
+
+# IDE specific folders
+.vscode
+/.idea
