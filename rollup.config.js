@@ -26,9 +26,10 @@ export default {
       sourcemap: true
     }
   ],
+  external: ['react', 'react-dom'],
   plugins: [
     del({ targets: 'build/*' }),
-    peerDepsExternal(),
+    peerDepsExternal('react', 'react-dom'),
     resolve({
       extensions
     }),

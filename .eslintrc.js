@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     es6: true
   },
-  ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'],
+  ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js', 'build/*'],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 2020, ecmaFeatures: { jsx: true } },
   settings: { react: { version: 'detect' } },
